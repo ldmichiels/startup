@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Ejemplo Crear Objeto</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+	<!--<script src="clasePersona.js"></script>-->
+</head> 
+<body>
+
+	<div data-role="page">
+
+		<div data-role="header">
+			<h1>Crear un Objeto</h1>
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			<center><p>Presionar el objeto y mirar la consola</p></center>
+
+			<!--Make a Button by Few Ways-->
+			<form>
+				<a id="listProp" data-role="button" data-theme="a" data-icon="star">List Object Properties</a>
+			</form>	
+				<script type="text/javascript">
+					//Create a Movie Object:
+					//Movie
+					//-attributes : hashmap
+					//+ play()
+					//+ stop()
+					//+ set(attr:string, value)
+					//+ get(attr:string)
+					var movie = Object.create(null);
+
+					Object.defineProperty(movie,  'name', { 	value: ''
+					                                        , writable: true 
+					                                      	, enumerable: true });
+
+					Object.defineProperty(movie, 'director', { value: ''
+						                                    , writable: true 
+						                                 	, enumerable: true });
+
+			        Object.defineProperty(movie, 'year', { value: ''
+						                                    , writable: true 
+						                                 	, enumerable: true });
+
+							
+					movie.play = function(){
+						return "Playing " + this.name + " film."; 
+					}
+
+					movie.stop = function(){
+						return "Stop " + this.name + " film."; 
+					}
+
+					var padrino = Object.create(movie);
+					padrino.name = "The Godfather";
+					padrino.year = 1972;
+					padrino.director = "Francis Ford Coppola";
+
+					$("#listProp").click( function(){
+						console.log("padrino creado :");
+						console.log("name = "+padrino.name);
+						console.log("year = "+padrino.year);
+						console.log("director = "+padrino.director);
+						console.log("si doy play = "+padrino.play());					
+						console.log("si doy stop = "+padrino.stop());
+					});
+					
+				</script> 
+		  
+		</div><!-- /content -->
+
+	</div><!-- /page -->
+
+</body>
+</html>

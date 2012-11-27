@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Ejemplo Crear Objeto</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+	<!--<script src="clasePersona.js"></script>-->
+</head> 
+<body>
+	<script type="text/javascript">
+		//Create a Movie Object:
+		//Movie
+		//-attributes : hashmap
+		//+ play()
+		//+ stop()
+		//+ set(attr:string, value)
+		//+ get(attr:string)
+		var movie = Object.create(null);
+
+		Object.defineProperty(movie,  'name', { 	value: ''
+		                                        , writable: true 
+		                                      	, enumerable: true });
+
+		Object.defineProperty(movie, 'director', { value: ''
+			                                    , writable: true 
+			                                 	, enumerable: true });
+
+        Object.defineProperty(movie, 'year', { value: ''
+			                                    , writable: true 
+			                                 	, enumerable: true });
+
+		function fncPlay(){ 
+			console.log("La pelicula esta corriendo"); 
+		}
+		
+		movie.play = function(){
+			return "Playing " + this.name + " film."; 
+		}
+		console.log(movie.play());
+	</script> 
+
+	<div data-role="page">
+
+		<div data-role="header">
+			<h1>Crear un Objeto</h1>
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			<center><p>Presionar el objeto y mirar la consola</p></center>
+
+			<!--Make a Button by Few Ways-->
+			<form>
+				<a id="create" data-role="button" data-theme="a" data-icon="star">Create an Object</a>
+			</form>	
+		  
+		</div><!-- /content -->
+
+	</div><!-- /page -->
+
+</body>
+</html>
