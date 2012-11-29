@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8" />
+    	<title>Ej4 :: Topic 4 :: Bootcamp HTML5</title>
+    	<script data-main="scripts/main" src="scripts/require-jquery.js"></script>
+	</head>
+	<body>
+		<p>Aca No Hay Nada</p>
+		<script>
+			var bdPalma = new Director("Brian De Palma", "1940", "Estadounidense");
+			console.log(bdPalma.getName());
+			console.log(bdPalma.prototype.getName());
+
+
+			var caracortada = new  Movie("Scarface", "1983", bdPalma);
+			console.log(caracortada.play());			
+			console.log(caracortada.stop());
+			console.log(caracortada.whoDirected());
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+
+{
+	  "title": "My New Post"
+	, "subtitle": "Este es mi perfil:"
+	, "nombre": "Lucas D."
+	, "apellido": "Michiels"
+	, "edad": "22"
+	, "edoCivil": "Soltero"
+	, "cumpleaños": "14/1/90"
+	, "foto": "img.JPG"
+	, "subtitle2": "Estudios: "
+	, "estudios": 
+				[
+					  {"estud": "Bachiller TTP Economia y Gestion de las Organizaciones."}
+					, {"estud": "Ingenieria de sistemas (cuarto año)."}
+					, {"estud": "Taller HTML UNICEN."}
+					, {"estud": "Bootcamp HTML5 Globant."}
+				]												
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8" />
+    	<title> Underscore :: Topic 5 :: Bootcamp HTML5</title>
+
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    	<script type="text/javascript" src="dust.js"></script>
+
+  
+	</head>
+	<body id="principal">
+			
+		<script>
+			window.onload = function(){
+
+				var datos = {
+								  title: "My New Post"
+								, subtitle: "Este es mi perfil:"
+								, nombre: "Lucas D."
+								, apellido: "Michiels"
+								, edad: "22"
+								, edoCivil: "Soltero"
+								, cumpleanios: "14/1/90"
+								, foto: "img.JPG"
+								, subtitle2: "Estudios: "
+								, estudios: [
+												  {estud: "Bachiller TTP Economia y Gestion de las Organizaciones."}
+												, {estud: "Ingenieria de sistemas (cuarto año)."}
+												, {estud: "Taller HTML UNICEN."}
+												, {estud: "Bootcamp HTML5 Globant."}
+											]												
+							}
+
+ 				//La siguiente funcion completa el template con los datos
+ 				var compiled = (function() {
+
+								  dust.register("intro", body_0);
+
+								  function body_0(chk, ctx) {
+								    return chk.write("<div class=\"entry\"><h1>").reference(ctx.get("title"), ctx, "h").write("</h1><h4>").reference(ctx.get("subtitle"), ctx, "h").write("</h4><div class=\"body\" style=\"float: both\"><div style=\"width: 800px\"><img src=\"").reference(ctx.get("foto"), ctx, "h").write("\" style=\"float: left\"></img><div style=\"float: right\"><p>").reference(ctx.get("nombre"), ctx, "h").write("</p><p>").reference(ctx.get("apellido"), ctx, "h").write("</p><p>").reference(ctx.get("edad"), ctx, "h").write("</p><p>").reference(ctx.get("edoCivil"), ctx, "h").write("</p><p>").reference(ctx.get("cumpleanios"), ctx, "h").write("</p><h4>").reference(ctx.get("subtitle2"), ctx, "h").write("</h4><div>").section(ctx.get("estudios"), ctx, {
+								      "block": body_1
+								    }, null).write("</div></div></div></div></div>");
+								  }
+								  function body_1(chk, ctx) {
+								    return chk.write("<p> ").reference(ctx.get("estud"), ctx, "h").write("</p> ");
+								  }
+								  return body_0;
+
+								})();
+        	
+	        	dust.loadSource(compiled);
+
+				dust.render("intro", datos, function(err, out) {								
+												$('#principal').html(out);
+											});				
+
+			}//window.onload
+		</script>
+
+	</body>
+</html>

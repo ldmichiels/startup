@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8" />
+    	<title> Underscore :: Topic 5 :: Bootcamp HTML5</title>
+
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    	<script type="text/javascript" src="underscore.js"></script>
+
+  
+	</head>
+	<body id="principal">
+			
+		<script>
+			window.onload = function(){
+
+				var datos = {
+								  title: "My New Post"
+								, subtitle: "Este es mi perfil:"
+								, nombre: "Lucas D."
+								, apellido: "Michiels"
+								, edad: "22"
+								, edoCivil: "Soltero"
+								, cumpleanios: "14/1/90"
+								, foto: "img.JPG"
+								, subtitle2: "Estudios: "
+								, estudios: [
+												  {estud: "Bachiller TTP Economia y Gestion de las Organizaciones."}
+												, {estud: "Ingenieria de sistemas (cuarto año)."}
+												, {estud: "Taller HTML UNICEN."}
+												, {estud: "Bootcamp HTML5 Globant."}
+											]												
+							}
+
+ 				//La siguiente funcion completa el template con los datos
+ 				//las variables se escriben entre <%= ... %>
+				var template =	'<div id="principal"><h1><%= title %></h1><h3><%= subtitle %></h3><img src="<%= foto %>"></img><div style="width: 800px"><p> <%= nombre %> </p><p> <%= apellido %> </p><p> <%= edad %> </p><p> <%= edoCivil %> </p><p><%= cumpleanios %></p><h4> <%= subtitle2 %> </h4><p><% _.each(estudios, function(it){ %><p><%= it.estud  %></p><% }); %></p></div></div>';
+
+				var codigoCompleto = _.template(template,  datos );
+				$('#principal').html(codigoCompleto);
+
+			}//window.onload
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8" />
+		<!-- Lucas D, Michiels -->
+		<title>Topic 2 :: ej12 :: Globant :: Welcome to the HTML5 bootcamp</title>				
+		<!-- Set Viewport -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<!-- Import CSS -->		
+		<link rel="stylesheet" href="ej1.css"></link>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<!-- jQuery & jQuery Mobile -->		
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+		<!-- Import JS -->
+		<script type="text/javascript" src="fncEj11.js"></script>
+	</head>
+
+	<body>
+
+		<div data-role="page" id="original">
+			
+			<div data-role="header">
+				<h1>Topic 2 :: ej11 :: Bootcamp :: Globant</h1>
+			</div><!-- /header -->
+			
+			<div data-role="content">
+				<center>					
+					<h2>Peliculas</h2>		
+					<!-- Buttons with  rel="external"-->
+					
+					<ol id="dos" data-role="listview" class="ui-listview">
+						<a id="boton1" rel="external" data-role="button" data-theme="a" data-transition="fade" title="just a link">Get Top Movies</a>
+						<!-- la lista arranca vacia y dinamicamente se le agregan los objetos encontrados -->
+					</ol>												
+				</center>
+			</div><!-- /content -->
+
+			<div data-role="footer">
+				<h3>LDM :: Bootcamp :: Globant</h3>
+			</div><!-- /footer -->			
+		</div><!-- page original-->
+
+		<div data-role="dialog" id="dialogo">
+
+		</div>
+	</body>
+</html>
