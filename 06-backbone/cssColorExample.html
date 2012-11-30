@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8" />
+    	<title> Backbone :: Topic 6 :: Bootcamp HTML5</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1"> 		
+		<!-- jQuery -->		
+		<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+		<!-- Import Backbone -->
+    	<script type="text/javascript" src="script/underscore.js"></script>
+    	<script type="text/javascript" src="script/backbone.js"></script>
+    	
+  
+	</head>
+	<body id="principal">
+		<div id="sidebar" class="interface" style="background-color: white;">
+			<ul>
+				<li>cosas fila uno</li>
+				<li>cosas fila dos</li>
+				<li>cosas fila tres</li>
+				<li>...</li>
+			</ul>
+		</div>
+		<script>
+			//window.onload = function(){
+
+					//Creo mi modelo Sidebar extendiendo de Backbone.Model
+ 					var Sidebar = Backbone.Model.extend({
+					  promptColor: function() {
+					    var cssColor = prompt("Please enter a CSS color:");
+					    this.set({color: cssColor});
+					  }
+					});
+					//creo una instancia del modelo Sidebar
+					window.sidebar = new Sidebar;
+
+					sidebar.on('change:color', function(model, color) {
+					  $('#sidebar').css({background: color});
+					});
+
+					sidebar.set({color: 'white'});
+
+					sidebar.promptColor();	
+
+			//}//window.onload
+		</script>
+
+	</body>
+</html>

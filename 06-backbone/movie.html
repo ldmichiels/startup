@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>Backbone.js</title>
+  <link rel="stylesheet" href="todos.css">
+
+  <script type="text/javascript" src="http://documentcloud.github.com/backbone/test/vendor/json2.js"></script>
+  <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+  <script src="script/underscore.js"></script>
+  <script src="script/backbone.js"></script>
+  <script type="text/javascript" src="http://documentcloud.github.com/backbone/examples/backbone-localstorage.js"></script>
+  <script src="script/movie.js"></script>
+</head>
+
+<body>
+  
+  <div id="todoapp">
+    
+    <header>
+      <h1>Movies</h1>
+      <input id="new-todo-title" type="text" placeholder="Nombre de la pelicula">
+      <input id="new-todo-year" type="text" placeholder="año">
+      <input id="new-todo-director" type="text" placeholder="director">
+      <input id="new-todo-punctuation" type="text" placeholder="puntuacion">
+    </header>
+
+    <section id="main">      
+      <ul id="todo-list"></ul>
+    </section>   
+    
+  </div>
+
+  <!-- Template -->
+
+  <script type="text/template" id="item-template">
+
+    <div class="view">
+      <label><%- title %> (<%- year %>) - <%- director %> [<%- punctuation %>]</label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%= title %>" />
+
+  </script>
+  <script type="text/template" id="stats-template">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+
+ </body>
+</html>
