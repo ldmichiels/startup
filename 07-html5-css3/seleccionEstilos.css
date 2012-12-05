@@ -1,0 +1,26 @@
+@import url("estiloGrande.css") screen and (min-device-width: 1200px);
+@import url("estiloMediano.css") screen and (min-device-width: 800px) and (max-device-width: 1199px);
+@import url("estiloChico.css") screen and (max-device-width: 800px);
+
+.body-first{
+	background-color: #555;
+	font-family: Helvetica;
+	font-size: 12px;
+	float: both;
+    width: auto;
+}
+
+.header-first {
+	border: 1px solid black;
+	background-color: grey;
+	text-align: center;
+	float: both;
+}
+
+.footer-first {
+	border: 1px solid black;
+	background-color: grey;
+	text-align: center;
+	float: both;
+}
+

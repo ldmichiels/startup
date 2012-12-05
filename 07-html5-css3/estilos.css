@@ -1,0 +1,44 @@
+.body-first{
+	background-color: #555555;
+	font-family: Helvetica;
+	font-size: 12px;
+	float: both;
+    width: auto;
+
+}
+
+@media screen and (max-device-width: 480px) {
+  .column {
+    float: none;
+  }
+}
+
+header {
+	display: block;
+	border-radius: 1px solid black;
+	text-align: center;
+	float: both;
+}
+
+.footer-first {
+	border: 1px solid black;
+	background-color: grey;
+	text-align: center;
+	float: both;
+}
+
+article {
+	display: block; 
+	border: 1px solid #aaaaff;
+	text-align: left;
+	}
+
+.nav-principal{
+	padding: top;
+	text-align: center;
+}
+
+.ul-li-a {
+	color: #FF0;
+}
+
