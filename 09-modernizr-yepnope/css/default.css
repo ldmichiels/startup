@@ -1,0 +1,282 @@
+body {
+	background-color: #555;
+}
+
+footer {
+	background-color: #666;
+	border-top: 2px solid black;
+	float: none;
+	position: relative;
+	bottom: 0px;
+	text-align: center;
+}
+
+body header h1 {
+	padding: 20px;
+}
+
+img {
+	-webkit-border-image: url(http://slides.html5rocks.com/src/borderimage/border_image_4.png) 20% repeat repeat;
+	border-width: 29px;	
+}
+
+.gmap {
+	width: auto;
+	height: 400px;
+}
+
+#codigo{
+	width: 400px;
+	height: 100px;
+}
+
+#drag-zone {
+list-style: none;
+float: left; 
+}
+#drag-zone li * {
+border: 4px solid #888;
+display: block;
+margin: 10px 0;
+}
+#drag-zone, #drop-zone, #drop-data { 
+width: 20%;
+}
+#drop-zone, #drop-data {
+padding: 40px;
+border: 5px solid #888;
+float: left;
+height: 240px;
+overflow: auto;
+}
+#drop-zone.hovering {
+border: 5px solid #aaa;
+background-color: rgba(255, 0, 0, 0.199219);
+}
+#drop-data { 
+background-color: #eee;
+font-family: Monospace;
+-ms-word-wrap: break-word;
+word-wrap: break-word;
+}
+.datatypes {
+font-weight: bold;
+}
+.draggable-text {
+padding: 5px;
+} 
+
+#threed-example {
+  -webkit-transform: rotateZ(5deg);
+  -webkit-transition: -webkit-transform 2s ease-in-out;
+}
+#threed-example:hover {
+  -webkit-transform: rotateZ(-5deg);
+}
+
+#speechrecognition{
+	margin:auto;
+	padding: 0;
+	width: 70%;
+	height: 50px;
+	background-color: #EEE;	
+}
+
+#backgroundtextarea {
+  	background: #FFF url(logo.gif) center center no-repeat;
+	background-size: contain;
+}
+/* ###################################################### */
+/*
+	si no hay espacio suficiente se hara una sola columna
+	y por ende dos filas
+*/
+@media screen and (max-device-width: 800px) {
+  .mainContent {
+    float: none;
+    -moz-column-count: 1;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 1;
+	-webkit-column-gap: 20px;
+	column-count: 1;
+	column-gap: 20px;
+  }
+}
+
+/*
+	si el espacio alcanza se hacen dos columnas y los
+	articulos se uestran en la misma fila
+*/
+/*
+@media screen and (min-device-width: 800px) {
+  .mainContent {
+    float: none;
+    -moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
+  }
+}
+*/
+/* ###################################################### */
+p span[class]{
+	background-color: white;
+}
+
+span[class^='hi'] {
+	background-color: violet;
+}
+
+span[class$='One'] {
+	background-color: purple;	
+}
+
+/* ###################################################### */
+
+.topHeader {
+	position: relative;
+	top: 20px;
+	text-align: center;
+}
+
+#menu {
+	margin:auto;
+	/*width:70%;*/
+	padding: 0;
+	text-align: center;
+	background-color: #a2a2a2;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu li  a{
+	font-family: Arial;  
+	font-size:11px;  
+	text-decoration: none;  
+	/*float:left;  */
+	padding: 10px;  
+	background-color: #555566;  
+	color: #fff;  
+}
+
+#menu li  a:hover{
+	background-color: #555544;  
+	margin-top:-2px;  
+	padding-bottom:12px; 
+}
+
+#menu  li:first-child a{
+	border-left: 2px solid black;
+}
+
+#menu  li:last-child a{
+	border-right: 2px solid black;
+}
+
+A:link {
+	color: #00f;
+	text-decoration: none;
+	font-style: italic;
+	font-weight:bold;
+}
+
+A:visited {
+	color: #f00;	
+	text-decoration: none;
+	font-style: normal;
+	font-weight: normal; 
+}
+
+A:active {
+	color: #0ff;
+	text-decoration: none;
+	font-style: normal;
+	font-weight: normal;
+}
+
+A:hover {
+	color: #0f0;
+	text-decoration: overline underline;
+	font-style: normal;
+	font-weight: normal;
+}
+
+.mainContent {
+	padding: 20px 20px 20px 20px ;
+}
+
+#firstTitle {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 25px;
+	font-family: Verdana;
+}
+
+.test {
+
+}
+
+.lowOne {
+
+}
+
+.hiOne {
+	background-color: yellow;
+}
+
+.hiTwo {
+	background-color: pink;
+}
+
+.hiThree {
+	background-color: green
+}
+
+/* ###################################################### */
+
+A:nth-of-type(1) {
+	color: violet;
+}
+
+A:nth-of-type(2) {
+	color: pink;
+}
+
+/* ###################################################### */
+
+p:empty {
+	margin: 0;
+	padding: 0;
+}
+
+/* ###################################################### */
+article {
+    -webkit-box-shadow:  5px 5px 5px 5px rgba(0, 0, 0, 0.4);        
+        box-shadow:  5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+article article {
+	margin: auto;
+	padding: 10px;
+	width: 90%;
+	background: rgba(0, 0, 255, 0.33);
+    -webkit-box-shadow:  5px 5px 5px 5px rgba(0, 0, 0, 0.4);        
+    box-shadow:  5px 5px 5px 5px rgba(0, 0, 0, 0.4);
+    text-shadow: 6px 4px 4px rgba(255, 255, 255, 0.5); 
+
+}
+
+aside {
+  -webkit-transform: rotate(-7.5deg); 
+     -moz-transform: rotate(-7.5deg);
+}
+
+progress {
+	-webkit-box-reflect: below 5px
+  	-webkit-gradient(linear, left top, left bottom, 
+                   from(transparent), to(rgba(255, 255, 255, 0.25)));
+}

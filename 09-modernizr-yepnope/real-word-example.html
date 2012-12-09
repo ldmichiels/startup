@@ -1,0 +1,37 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>yepnope.js test</title>  
+  <style>
+    <script src="modernizr.custom.89257.js"></script>
+    div { margin: 10px; }  
+    div p { font-size: 12px; color: #333; }
+    yepnope({  
+  test: Modernizr.inputtypes.email && Modernizr.input.required && Modernizr.input.placeholder && Modernizr.input.pattern,  
+  nope: 'h5f.min.js',  
+  callback: function(url, result, key) {  
+    H5F.setup(document.getElementById("signup"));  
+  }  
+});   
+  </style>  
+</head>  
+<body>  
+  <form>  
+    <div>  
+      <label for="username">Username</label>  
+      <input type="text" required pattern="[a-z0-9_-]{3,15}" name="username" id="username">  
+      <p>Between 3 and 15 characters. Only letters, numbers, underscores (_) and hyphens (-) are allowed.</p>  
+    </div>  
+    <div>  
+      <label for="email">Email</label>  
+      <input type="email" required placeholder="someone@somewhere.com" name="email" id="email">  
+    </div>  
+    <div>  
+      <label for="password">Password</label>  
+      <input type="password" required name="password" id="password">  
+    </div>  
+    <input type="submit" value="Submit">  
+  </form>  
+</body>  
+</html>  

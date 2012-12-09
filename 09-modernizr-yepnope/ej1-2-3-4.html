@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Topic 8 :: Bootcamp HTML5 :: Globant</title>
+        <link href="css/default.css" rel="stylesheet" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="scripts/yepnope.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+        <script src="scripts/modernizr.js"></script>        
+        <script>
+
+            $(document).ready(function(){
+                yepnope({  
+                      test: Modernizr.mq,
+                      callback: function(url, result, key){
+                        if(!result){
+                            $('body').html('');
+                            alert('The MQ Test Failed!');
+                        } else {
+                            alert('The MQ test Passed!');
+                          }
+                    }
+                });
+
+                yepnope({
+                      test: Modernizr.geolocation,
+                      yep: 'grey-background-style.css',
+                      nope: 'yellow-background-style.css',
+                      callback: function (url, result, key) {
+                        if (result) {
+                            alert('The Geoloaction Test Passed!');
+                        } else {
+                            alert('The Geoloaction test Failed!');
+                          }
+                        }                  
+                    });      
+            });
+            
+        </script>
+        <script src="scripts/ej1.js"></script>
+    </head>
+ 
+    <body>
+        <header class="topHeader">
+            <div id="logo">
+                <img id="threed-example" src="http://media.tumblr.com/tumblr_lqhtkhKcgF1qfmfxq.png" />
+            </div>
+            <h1>CSS Playground</h1>
+        </header>      
+        <article>
+            <textarea id="codigo" placeholder="Escriba aqui su codigo JavaScript"></textarea> 
+            <button id="ejecutar" >Ejecutar</button>
+            <button id="guardar">Guardar</button>
+            <div id="eldiv"></div>
+
+            <div id="drop-zone">
+                Drop in images from your desktop
+            </div>
+            <div id="drag-zone"></div>
+
+            <button id="see-position">Show Position</button> 
+            <span id="geo-log" class="gmap"></span>
+            <div id="geo-map" class="gmap">
+               <img src="http://maps.google.com/maps/api/staticmap?center=37.4419,-94.1419&zoom=3&size=680x278&sensor=true"/>
+            </div>
+
+        </article>
+        
+        <footer>
+            <p>&copy; Copyright 2012 - HTML5 Team</p>
+        </footer>
+    </body>
+</html>
