@@ -2,7 +2,8 @@
 $(document).ready(function() {
    ejecutarCodigo();
    guardarCodigo();
-   dragganddrop()
+   dragganddrop();
+   geolocation();
  })
 
 function ejecutarCodigo(){
@@ -78,3 +79,52 @@ function handleFiles(files) {
   debugger;
 }
 
+function geolocation(){
+  
+    var map = null;
+    var geolog = document.querySelector('#geo-log');
+    var geoMap = document.querySelector('#geo-map');
+
+    function showPosition(position) {
+      geolog.textContent = "You're within " + position.coords.accuracy +
+                           " meters of (" + position.coords.latitude + ", " +
+                           position.coords.longitude + ")";
+      var latLng = new google.maps.LatLng(
+          position.coords.latitude, position.coords.longitude);
+      var marker = new google.maps.Marker({
+        position: latLng,
+        map: map
+      });
+      map.setCenter(latLng);
+      map.setZoom(15);
+    }
+
+    function handlePositionError(evt) {
+      geolog.textContent = evt.message;
+    }
+
+    function successPositionHandler(evt) {
+      // Load map if it doesn't already exist and when user clicks the button.
+      if (!map) {
+        map = new google.maps.Map(geoMap, {
+                                  zoom: 3,
+                                  center: new google.maps.LatLng(37.4419, -94.1419), // United States
+                                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                                });
+        map.getDiv().style.border =  '1px solid #ccc';        
+      }
+
+      if (navigator.geolocation) {
+        geolog.style.visibility = 'visible';
+        geolog.textContent = 'Looking for location...';
+        navigator.geolocation.getCurrentPosition(showPosition, handlePositionError);
+        // Also monitor position as it changes.
+        //navigator.geolocation.watchPosition(showPosition, handlePositionError);
+      } else {
+        geolog.textContent = 'Oops! Your browser does not support geolocation.';
+      }
+    }
+
+    document.querySelector('#see-position').addEventListener('click', successPositionHandler, false);
+    geoMap.addEventListener('click', successPositionHandler, false);
+  }
