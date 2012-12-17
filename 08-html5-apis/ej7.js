@@ -1,10 +1,11 @@
-
 $(document).ready(function() {
    ejecutarCodigo();
    guardarCodigo();
    dragganddrop();
    appcache();
- })
+ });
+ 
+ $("#reloadButton").onclick(window.location.reload());
 
 function ejecutarCodigo(){
 	document.querySelector("#ejecutar").addEventListener('click', function () {
