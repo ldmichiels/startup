@@ -1,5 +1,4 @@
-
-{
+{ "data":{
 	  "title": "My New Post"
 	, "subtitle": "Este es mi perfil:"
 	, "nombre": "Lucas D."
@@ -16,4 +15,5 @@
 					, {"estud": "Taller HTML UNICEN."}
 					, {"estud": "Bootcamp HTML5 Globant."}
 				]												
+	}
 }
