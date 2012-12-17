@@ -45,19 +45,20 @@
 		                
 		                success: function (response, status, xhr) {		                
 		                
-		                datos = {
-		                		  title: response.title
-								, subtitle: response.subtitle
-								, nombre: response.nombre
-								, apellido: response.apellido
-								, edad: response.edad
-								, edoCivil: response.edoCivil
-								, cumpleaños: response.cumpleaños
-								, foto: response.foto
-								, subtitle2: response.subtitle2
-								, estudios: response.estudios
-		                	};
-		                },
+		                datos = response.data,
+		               // datos = {
+		               // 		  title: response.title
+				//				, subtitle: response.subtitle
+				//				, nombre: response.nombre
+				//				, apellido: response.apellido
+				//				, edad: response.edad
+				//				, edoCivil: response.edoCivil
+				//				, cumpleaños: response.cumpleaños
+				//				, foto: response.foto
+				//				, subtitle2: response.subtitle2
+				//				, estudios: response.estudios
+		                //	};
+		                //},
 
 		                error: function (response, status, xhr) {
 				            //debugger;
